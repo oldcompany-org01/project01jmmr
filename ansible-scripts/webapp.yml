@@ -1,10 +1,11 @@
 - hosts: localhost
-  connection: local
+
   vars:
     resource_group: myAnsibleRG
     webapp_name: myWebApp
     plan_name: myAnsibleAppServicePlan
     location: eastus
+    
   tasks:
     - name: Create a resource group
       azure_rm_resourcegroup:
@@ -23,7 +24,7 @@
           number_of_workers: 1
         frameworks:
           - name: "java"
-            version: "8"
+            version: "1.8"
             settings:
               java_container: tomcat
-              java_container_version: 8.5
+              java_container_version: 9.0
